@@ -39,7 +39,7 @@ export class GameManager {
             if(message.type == MAKE_MOVE){
                 const game = this.games.find( game => game.player1 == socket || game.player2 == socket)
                 if(game){
-                    game.makeMove();
+                    game.makeMove(socket, message.move);
                 }
                 
             }
