@@ -1,18 +1,20 @@
-import { useState } from 'react'
 import './App.css'
+import { Route, Routes , BrowserRouter } from 'react-router-dom'
+import { Landing } from './screens/Landing'
+import { Game } from './screens/Game'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <textarea>
-      enter room id
-      </textarea>
-      <button>
-        join room
-      </button>
-    </>
+    <div className='bg-slate-800'>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Landing />}/>
+        <Route path='/game' element={<Game />} />
+      </Routes>
+    </BrowserRouter>
+    </div>
   )
 }
 
