@@ -55,6 +55,13 @@ export class Game {
                     winner : this.board.turn() === 'w' ? 'black' : 'white'
                 }
             }))
+            this.player2.emit(JSON.stringify({
+                type: GAME_OVER,
+                payload: {
+                    winner: this.board.turn() === "w" ? "black" : "white"
+                }
+            }))
+            return;
         }
 
         if(this.moveCount % 2 === 0){
@@ -68,7 +75,6 @@ export class Game {
                 payload: move
             }))
         }
-
         this.moveCount++
     }
 
